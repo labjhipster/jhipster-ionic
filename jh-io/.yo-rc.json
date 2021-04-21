@@ -41,6 +41,8 @@
     "packageFolder": "es/lab/jhio",
     "jwtSecretKey": "YTZlMzBmMmU2ZWY5YjE3YWJkMDBmNTQ4Mzk2YmIxN2UyZmI3NjM2OGQzOTNjZTYxOTRlNmExZmNlZDhkYzMxYWJkNjUxZWU4YzNlZjAyYTBhNmRkOGIyNmNkMWRjNWJjNDY0NGU2YzNkMTViZDgxNjdhOTFhMDgxM2Q1OWEyNWI=",
     "clientPackageManager": "npm",
-    "languages": ["es", "en"]
+    "languages": ["es", "en"],
+    "entities": ["Blog", "Post", "Tag"],
+    "lastLiquibaseTimestamp": 1618991280000
   }
 }
