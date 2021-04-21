@@ -20,16 +20,8 @@
       "fieldValidateRulesMinlength": "2"
     }
   ],
-  "relationships": [
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "user",
-      "otherEntityRelationshipName": "blog",
-      "relationshipName": "user",
-      "otherEntityField": "login"
-    }
-  ],
-  "changelogDate": "20210421155230",
+  "relationships": [],
+  "changelogDate": "20210421161244",
   "entityTableName": "blog",
   "dto": "no",
   "pagination": "no",
