@@ -5,7 +5,7 @@ import { ApiService } from '../api/api.service';
 import { LoginService } from '../login/login.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
   private user: any;
@@ -19,11 +19,11 @@ export class UserService {
   login(accountInfo: any) {
     this.loginService
       .login(accountInfo)
-      .then(res => {
+      .then((res) => {
         this.loggedIn(res);
         return of(res);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error('ERROR', err);
         return throwError(err);
       });

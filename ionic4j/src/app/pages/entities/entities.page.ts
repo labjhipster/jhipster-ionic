@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-entities',
   templateUrl: 'entities.page.html',
-  styleUrls: ['entities.page.scss']
+  styleUrls: ['entities.page.scss'],
 })
 export class EntitiesPage {
   entities: Array<any> = [
@@ -16,5 +16,4 @@ export class EntitiesPage {
   openPage(page) {
     this.navController.navigateForward('/tabs/entities/' + page.route);
   }
-
 }

@@ -38,8 +38,8 @@ ionic4j
 
 This module allows you to generate entities using:
 
-```bash	
-ionic4j entity <name>	
+```bash
+ionic4j entity <name>
 ```
 
 Or by importing JDL:
@@ -52,22 +52,22 @@ ionic4j import-jdl <file.jdl>
 
 ```bash
 yo jhipster-ionic # create an app
-yo jhipster-ionic:entity <name>	
+yo jhipster-ionic:entity <name>
 yo jhipster-ionic:import-jdl <file.jdl>
 ```
 
 ### Tips
 
 In production, you will need to enable CORS in your backend's `src/main/resources/config/application-prod.yml` file. Set the allowed-origins so it works with `ionic serve`:
-         
+
 ```yaml
 cors:
-    allowed-origins: "http://localhost:8100"
+  allowed-origins: 'http://localhost:8100'
 ```
 
 ## Pages
 
-The Ionic JHipster Starter comes with a variety of ready-made pages. 
+The Ionic JHipster Starter comes with a variety of ready-made pages.
 
 ## Services
 
@@ -87,7 +87,7 @@ The `ApiService` is a simple CRUD frontend to an API.
 
 The Ionic JHipster Starter comes with internationalization (i18n) out of the box with
 [ngx-translate](https://github.com/ngx-translate/core). This makes it easy to
-change the text used in the app by modifying only one file. 
+change the text used in the app by modifying only one file.
 
 ### Adding Languages
 

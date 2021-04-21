@@ -4,7 +4,7 @@ import { AccountService } from '../auth/account.service';
 import { AuthServerProvider } from '../auth/auth-jwt.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
   constructor(
@@ -14,12 +14,12 @@ export class LoginService {
   ) {}
 
   login(credentials, callback?) {
-    const cb = callback || function() {};
+    const cb = callback || function () {};
 
     return new Promise((resolve, reject) => {
       this.authServerProvider.login(credentials).subscribe(
-        data => {
-          this.accountService.identity(true).then(account => {
+        (data) => {
+          this.accountService.identity(true).then((account) => {
             // After the login the language will be changed to
             // the language selected by the user during his registration
             if (account !== null) {
@@ -29,7 +29,7 @@ export class LoginService {
           });
           return cb();
         },
-        err => {
+        (err) => {
           this.logout();
           reject(err);
           return cb(err);

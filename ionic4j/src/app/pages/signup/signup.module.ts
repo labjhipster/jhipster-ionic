@@ -9,12 +9,12 @@ import { SignupPage } from './signup.page';
 const routes: Routes = [
   {
     path: '',
-    component: SignupPage
-  }
+    component: SignupPage,
+  },
 ];
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes), TranslateModule],
-  declarations: [SignupPage]
+  declarations: [SignupPage],
 })
 export class SignupPageModule {}

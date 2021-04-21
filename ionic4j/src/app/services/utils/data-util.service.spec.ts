@@ -23,7 +23,7 @@ import { JhiDataUtils } from './data-util.service';
 describe('Data Utils Service Test', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [JhiDataUtils]
+      providers: [JhiDataUtils],
     });
   });
 
@@ -67,16 +67,14 @@ describe('Data Utils Service Test', () => {
     inject([JhiDataUtils], (service: JhiDataUtils) => {
       const eventSake = {
         target: {
-          files: [{ type: 'text/plain' }]
-        }
+          files: [{ type: 'text/plain' }],
+        },
       };
 
-      service
-        .setFileData(eventSake, null, null, true)
-        .then(
-          () => fail('Should not resolve'),
-          error => expect(error).toMatch(/^File was expected to be an image but was found to be /)
-        );
+      service.setFileData(eventSake, null, null, true).then(
+        () => fail('Should not resolve'),
+        (error) => expect(error).toMatch(/^File was expected to be an image but was found to be /)
+      );
     })
   ));
 
@@ -84,24 +82,22 @@ describe('Data Utils Service Test', () => {
     inject([JhiDataUtils], (service: JhiDataUtils) => {
       const eventSake = {
         target: {
-          files: [new File(['file content'], 'test-file.txt')]
-        }
+          files: [new File(['file content'], 'test-file.txt')],
+        },
       };
 
       service
         .setFileData(eventSake, {}, 'document', false)
-        .then(modifiedEntity => expect(modifiedEntity).toEqual({ document: 'ZmlsZSBjb250ZW50', documentContentType: '' }));
+        .then((modifiedEntity) => expect(modifiedEntity).toEqual({ document: 'ZmlsZSBjb250ZW50', documentContentType: '' }));
     })
   ));
 
   it('should return a promise that rejects with an error message when passed event does not contain a file', async(
     inject([JhiDataUtils], (service: JhiDataUtils) => {
-      service
-        .setFileData(null, null, null, false)
-        .then(
-          () => fail('Should not resolve'),
-          error => expect(error).toMatch(/^Base64 data was not set as file could not be extracted from passed parameter: /)
-        );
+      service.setFileData(null, null, null, false).then(
+        () => fail('Should not resolve'),
+        (error) => expect(error).toMatch(/^Base64 data was not set as file could not be extracted from passed parameter: /)
+      );
     })
   ));
 });

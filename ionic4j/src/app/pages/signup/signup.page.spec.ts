@@ -15,7 +15,7 @@ describe('SignupPage', () => {
     TestBed.configureTestingModule({
       declarations: [SignupPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [TranslateModule.forRoot(), RouterTestingModule, NgxWebstorageModule.forRoot(), HttpClientTestingModule]
+      imports: [TranslateModule.forRoot(), RouterTestingModule, NgxWebstorageModule.forRoot(), HttpClientTestingModule],
     }).compileComponents();
   }));
 

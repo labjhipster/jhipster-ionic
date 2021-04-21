@@ -5,18 +5,8 @@
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
-    "types": [
-      "jasmine",
-      "node",
-      "jest"
-    ]
+    "types": ["jasmine", "node", "jest"]
   },
-  "files": [
-    "src/test.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
-  ]
+  "files": ["src/test.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }

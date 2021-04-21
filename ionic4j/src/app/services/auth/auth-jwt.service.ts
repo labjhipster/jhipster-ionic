@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { ApiService } from '../api/api.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthServerProvider {
   constructor(private http: HttpClient, private $localStorage: LocalStorageService, private $sessionStorage: SessionStorageService) {}
@@ -19,7 +19,7 @@ export class AuthServerProvider {
     const data = {
       username: credentials.username,
       password: credentials.password,
-      rememberMe: credentials.rememberMe
+      rememberMe: credentials.rememberMe,
     };
 
     return this.http.post(ApiService.API_URL + '/authenticate', data, { observe: 'response' }).pipe(map(authenticateSuccess.bind(this)));
@@ -52,7 +52,7 @@ export class AuthServerProvider {
   }
 
   logout(): Observable<any> {
-    return new Observable(observer => {
+    return new Observable((observer) => {
       this.$localStorage.clear('authenticationToken');
       this.$sessionStorage.clear('authenticationToken');
       observer.complete();

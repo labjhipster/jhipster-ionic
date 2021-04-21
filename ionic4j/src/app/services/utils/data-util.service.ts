@@ -32,7 +32,7 @@ export interface JhiFileLoadError {
  * An utility service for data.
  */
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JhiDataUtils {
   constructor() {}
@@ -67,7 +67,7 @@ export class JhiDataUtils {
       }
       const byteArray = new Uint8Array(byteNumbers);
       const blob = new Blob([byteArray], {
-        type: contentType
+        type: contentType,
       });
       window.navigator.msSaveOrOpenBlob(blob);
     } else {
@@ -76,8 +76,8 @@ export class JhiDataUtils {
       const win = window.open();
       win.document.write(
         '<iframe src="' +
-        fileURL +
-        '" frameborder="0" style="border:0; top:0; left:0; bottom:0; right:0; width:100%; height:100%;" allowfullscreen></iframe>'
+          fileURL +
+          '" frameborder="0" style="border:0; top:0; left:0; bottom:0; right:0; width:100%; height:100%;" allowfullscreen></iframe>'
       );
     }
   }
@@ -87,7 +87,7 @@ export class JhiDataUtils {
    */
   toBase64(file: File, cb: Function): void {
     const fileReader: FileReader = new FileReader();
-    fileReader.onload = function(e: any) {
+    fileReader.onload = function (e: any) {
       const base64Data: string = e.target.result.substr(e.target.result.indexOf('base64,') + 'base64,'.length);
       cb(base64Data);
     };
@@ -128,7 +128,7 @@ export class JhiDataUtils {
         if (isImage && !file.type.startsWith('image/')) {
           reject(`File was expected to be an image but was found to be ${file.type}`);
         } else {
-          this.toBase64(file, base64Data => {
+          this.toBase64(file, (base64Data) => {
             entity[field] = base64Data;
             entity[`${field}ContentType`] = file.type;
             resolve(entity);
@@ -160,7 +160,7 @@ export class JhiDataUtils {
           const error: JhiFileLoadError = {
             message: `File was expected to be an image but was found to be '${file.type}'`,
             key: 'not.image',
-            params: { fileType: file.type }
+            params: { fileType: file.type },
           };
           observer.error(error);
         } else {
@@ -168,7 +168,7 @@ export class JhiDataUtils {
           this.toBase64(file, (base64Data: string) => {
             editForm.patchValue({
               [field]: base64Data,
-              [fieldContentType]: file.type
+              [fieldContentType]: file.type,
             });
             observer.next();
             observer.complete();
@@ -178,7 +178,7 @@ export class JhiDataUtils {
         const error: JhiFileLoadError = {
           message: 'Could not extract file',
           key: 'could.not.extract',
-          params: { event }
+          params: { event },
         };
         observer.error(error);
       }
@@ -196,7 +196,7 @@ export class JhiDataUtils {
     }
     const byteArray = new Uint8Array(byteNumbers);
     const blob = new Blob([byteArray], {
-      type: contentType
+      type: contentType,
     });
     const tempLink = document.createElement('a');
     tempLink.href = window.URL.createObjectURL(blob);

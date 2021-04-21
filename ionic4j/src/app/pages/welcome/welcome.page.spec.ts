@@ -15,7 +15,7 @@ describe('WelcomePage', () => {
     TestBed.configureTestingModule({
       declarations: [WelcomePage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [TranslateModule.forRoot(), NgxWebstorageModule.forRoot(), HttpClientTestingModule]
+      imports: [TranslateModule.forRoot(), NgxWebstorageModule.forRoot(), HttpClientTestingModule],
     }).compileComponents();
   }));
 

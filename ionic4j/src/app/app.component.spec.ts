@@ -16,7 +16,7 @@ describe('AppComponent', () => {
     statusBarSpy = createSpyObj('StatusBar', ['styleDefault']);
     splashScreenSpy = createSpyObj('SplashScreen', ['hide']);
     platformReadySpy = Promise.resolve();
-    platformSpy = createSpyObj('Platform', [{ready: platformReadySpy}]);
+    platformSpy = createSpyObj('Platform', [{ ready: platformReadySpy }]);
 
     TestBed.configureTestingModule({
       declarations: [AppComponent],
@@ -25,8 +25,8 @@ describe('AppComponent', () => {
       providers: [
         { provide: StatusBar, useValue: statusBarSpy },
         { provide: SplashScreen, useValue: splashScreenSpy },
-        { provide: Platform, useValue: platformSpy }
-      ]
+        { provide: Platform, useValue: platformSpy },
+      ],
     }).compileComponents();
   }));
 

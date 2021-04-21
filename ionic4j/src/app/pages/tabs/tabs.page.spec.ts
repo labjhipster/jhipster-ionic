@@ -13,11 +13,8 @@ describe('TabsPage', () => {
     TestBed.configureTestingModule({
       declarations: [TabsPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [
-        HttpClientTestingModule,
-        TranslateModule.forChild(),
-      ],
-      providers: [TranslateStore]
+      imports: [HttpClientTestingModule, TranslateModule.forChild()],
+      providers: [TranslateStore],
     }).compileComponents();
   }));
 

@@ -6,7 +6,7 @@ import { UserService } from 'src/app/services/user/user.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss']
+  styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
   // The account fields for the signup form
@@ -23,7 +23,7 @@ export class SignupPage implements OnInit {
     firstName: '',
     lastName: '',
     password: '',
-    langKey: 'en'
+    langKey: 'en',
   };
 
   // Our translated text strings
@@ -38,7 +38,7 @@ export class SignupPage implements OnInit {
     public toastController: ToastController,
     public translateService: TranslateService
   ) {
-    this.translateService.get(['SIGNUP_ERROR', 'SIGNUP_SUCCESS', 'EXISTING_USER_ERROR', 'INVALID_PASSWORD_ERROR']).subscribe(values => {
+    this.translateService.get(['SIGNUP_ERROR', 'SIGNUP_SUCCESS', 'EXISTING_USER_ERROR', 'INVALID_PASSWORD_ERROR']).subscribe((values) => {
       this.signupErrorString = values.SIGNUP_ERROR;
       this.signupSuccessString = values.SIGNUP_SUCCESS;
       this.existingUserError = values.EXISTING_USER_ERROR;
@@ -57,11 +57,11 @@ export class SignupPage implements OnInit {
         const toast = await this.toastController.create({
           message: this.signupSuccessString,
           duration: 3000,
-          position: 'top'
+          position: 'top',
         });
         toast.present();
       },
-      async response => {
+      async (response) => {
         // Unable to sign up
         const error = JSON.parse(response.error);
         let displayError = this.signupErrorString;
@@ -78,7 +78,7 @@ export class SignupPage implements OnInit {
         const toast = await this.toastController.create({
           message: displayError,
           duration: 3000,
-          position: 'middle'
+          position: 'middle',
         });
         toast.present();
       }
