@@ -83,7 +83,6 @@ export class BlogUpdateComponent implements OnInit {
       id: blog.id,
       name: blog.name,
       handle: blog.handle,
-      user: blog.user,
     });
 
     this.usersSharedCollection = this.userService.addUserToCollectionIfMissing(this.usersSharedCollection, blog.user);
