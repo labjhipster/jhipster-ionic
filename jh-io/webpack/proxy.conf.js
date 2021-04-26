@@ -13,7 +13,7 @@ function setupProxy() {
         '/auth',
         '/health',
       ],
-      target: `http${tls ? 's' : ''}://8080-bronze-lark-nj2y10en.ws-eu03.gitpod.io`,
+      target: `http${tls ? 's' : ''}://8080-lime-camel-gstunjuy.ws-eu03.gitpod.io`,
       secure: false,
       changeOrigin: tls,
     },
