@@ -16,7 +16,7 @@ export class BlogService {
     }
 
     update(blog: Blog): Observable<HttpResponse<Blog>> {
-        return this.http.put(this.resourceUrl, blog, { observe: 'response'});
+        return this.http.put(`${this.resourceUrl}/${blog.id}`, blog, { observe: 'response'});
     }
 
     find(id: number): Observable<HttpResponse<Blog>> {

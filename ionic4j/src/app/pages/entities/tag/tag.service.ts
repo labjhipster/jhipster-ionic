@@ -16,7 +16,7 @@ export class TagService {
     }
 
     update(tag: Tag): Observable<HttpResponse<Tag>> {
-        return this.http.put(this.resourceUrl, tag, { observe: 'response'});
+        return this.http.put(`${this.resourceUrl}/${tag.id}`, tag, { observe: 'response'});
     }
 
     find(id: number): Observable<HttpResponse<Tag>> {
