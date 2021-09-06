@@ -9,4 +9,11 @@ yo jhipster-ionic:entity blog
 
 ./mvnw -Dskip.npm
 
+cambios:
+  - environment.ts: 
+        apiUrl: 'https://8080-lime-camel-gstunjuy.ws-eu03.gitpod.io/api',
+  - application-dev.yml
+        allowed-origins: 'http://localhost:8100,http://localhost:9000,https://8080-lime-camel-gstunjuy.ws-eu03.gitpod.io,https://8100-lime-camel-gstunjuy.ws-eu03.gitpod.io'
+
+
 nota: hacer públicos los puertos
